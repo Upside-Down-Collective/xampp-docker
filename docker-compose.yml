@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     hostname: xammp-docker
     container_name: xampp-docker
-    command: bash -c 'app-start.sh'
+    command: bash -c '/xampp-docker/app-start.sh'
     volumes:
       - /path/you/want/to/use:/opt/lampp/htdocs # Change host volume path
     ports:
