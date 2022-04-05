@@ -1,4 +1,4 @@
 #! /bin/bash
 
-/opt/lampp && \
+cd /opt/lampp && \
 ./xampp startapache # Change this line to whatever you want.
