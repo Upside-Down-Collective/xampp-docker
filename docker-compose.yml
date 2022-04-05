@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  xampp-docker:
+    image: upside-down-collective/xampp-docker
+    restart: unless-stopped
+    hostname: xammp-docker
+    container_name: xampp-docker
+    command: bash -c 'app-start.sh'
+    volumes: /path/you/want/to/use:/opt/lampp/htdocs # Change host volume path
+    ports:
+      - "8080:80" # HTTP port used by Apache, change to any host port you want, e. g. 8089:80
+      - "4430:443" # HTTPS port
+      - "3307:3306" # MySQL port
+      - "2021:21" # ProFTPD port
+    networks:
+      xampp-docker_network:
+        ipv4_address: 172.21.2.2
+
+networks:
+  xampp-docker_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.21.2.0/24"
