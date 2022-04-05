@@ -7,7 +7,8 @@ services:
     hostname: xammp-docker
     container_name: xampp-docker
     command: bash -c 'app-start.sh'
-    volumes: /path/you/want/to/use:/opt/lampp/htdocs # Change host volume path
+    volumes:
+      - /path/you/want/to/use:/opt/lampp/htdocs # Change host volume path
     ports:
       - "8080:80" # HTTP port used by Apache, change to any host port you want, e. g. 8089:80
       - "4430:443" # HTTPS port
