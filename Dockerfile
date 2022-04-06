@@ -3,7 +3,6 @@ FROM debian:stable-slim
 LABEL author Upside Down Collective
 
 WORKDIR /xampp-docker
-COPY . .
 
 RUN \
 apt update && apt upgrade -y
