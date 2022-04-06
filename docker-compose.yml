@@ -4,6 +4,7 @@ services:
   xampp-docker:
     image: upside-down-collective/xampp-docker
     restart: unless-stopped
+    tty: true
     hostname: xammp-docker
     container_name: xampp-docker
     command: bash -c '/xampp-docker/app-start.sh'
